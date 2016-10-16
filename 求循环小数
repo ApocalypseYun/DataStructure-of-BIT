@@ -1,0 +1,14 @@
+void change(int n, int m, node *head)
+{
+	node *p = head;
+	for (int i = 1; n&&i <= 50; i++) {
+
+		n *= 10;
+		node *q = new node;
+		q->data = n / m;
+		q->next = p->next;
+		p->next = q;
+		p = q;
+		n %= m;
+	}
+}
